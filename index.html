@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>हॅपी बर्थडे लाईफ टाईम | LIC जीवन उत्सव (८८३)</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- html2canvas for Image Generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <style>
+    :root {
+      --primary: #d9480f;
+      --primary-dark: #b83606;
+      --gold: #f59f00;
+      --gold-light: #fff3bf;
+      --bg: #fff9db;
+      --card-bg: #ffffff;
+      --text-dark: #212529;
+      --text-muted: #495057;
+      --green: #2b8a3e;
+      --whatsapp: #25D366;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Mukta', 'Poppins', sans-serif; }
+
+    body {
+      background: linear-gradient(135deg, #fff4e6 0%, #fff9db 50%, #ffe8cc 100%);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px;
+    }
+
+    .container { width: 100%; max-width: 520px; margin: 0 auto; }
+
+    .top-bar { display: flex; justify-content: flex-end; align-items: center; margin-bottom: 12px; gap: 6px; }
+
+    .lang-btn {
+      border: 1px solid #fd7e14; background: white; color: #d9480f;
+      padding: 4px 10px; font-size: 13px; font-weight: 700; border-radius: 20px;
+      cursor: pointer; transition: all 0.2s ease;
+    }
+    .lang-btn.active { background: #d9480f; color: white; box-shadow: 0 2px 6px rgba(217, 72, 15, 0.3); }
+
+    .hero { text-align: center; margin-bottom: 16px; }
+    .hero-badge {
+      display: inline-block; background: #ffe3e3; color: #c92a2a; padding: 4px 12px;
+      border-radius: 20px; font-size: 13px; font-weight: 700; margin-bottom: 6px; border: 1px dashed #ffa8a8;
+    }
+    .hero h1 { font-size: 26px; font-weight: 800; color: var(--primary); text-shadow: 1px 1px 2px rgba(0,0,0,0.05); line-height: 1.2; }
+    .hero p { font-size: 14px; color: var(--text-muted); font-weight: 600; margin-top: 2px; }
+
+    .selector-box { background: white; padding: 14px 12px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); margin-bottom: 16px; text-align: center; }
+    .selector-title { font-size: 15px; font-weight: 700; color: #343a40; margin-bottom: 10px; }
+    .child-name-input {
+      width: 100%; padding: 8px 12px; font-size: 14px; border: 1.5px solid #ffa94d;
+      border-radius: 8px; margin-bottom: 12px; text-align: center; font-weight: 600; outline: none;
+    }
+    .child-name-input:focus { border-color: #d9480f; box-shadow: 0 0 6px rgba(217, 72, 15, 0.2); }
+
+    .pills-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+    .age-pill {
+      background: #f8f9fa; border: 1.5px solid #dee2e6; color: #495057; padding: 6px 11px;
+      border-radius: 25px; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.2s;
+    }
+    .age-pill.active {
+      background: linear-gradient(135deg, #f59f00, #d9480f); color: white; border-color: #d9480f;
+      box-shadow: 0 3px 8px rgba(217, 72, 15, 0.35); transform: scale(1.05);
+    }
+
+    /* RESULT CARD (Optimized for Image Generation) */
+    #capture-card {
+      background: #ffffff; border-radius: 20px; padding: 18px 16px;
+      box-shadow: 0 10px 25px rgba(217, 72, 15, 0.12); border: 2px solid #ffd43b;
+      position: relative; overflow: hidden; margin-bottom: 18px;
+    }
+    .card-top-decor {
+      position: absolute; top: -30px; right: -30px; width: 90px; height: 90px;
+      background: radial-gradient(circle, #ffe066 10%, transparent 70%); border-radius: 50%; z-index: 0;
+    }
+    .bday-wishes-banner {
+      background: linear-gradient(135deg, #ff922b, #e8590c); color: white; text-align: center;
+      padding: 8px 10px; border-radius: 12px; margin-bottom: 12px; box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      position: relative; z-index: 1;
+    }
+    .bday-wishes-banner h2 { font-size: 17px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 6px; }
+    .bday-wishes-banner p { font-size: 13px; font-weight: 600; opacity: 0.95; }
+
+    .badge-sovereign {
+      display: flex; align-items: center; justify-content: center; gap: 6px; background: #ebfbee;
+      color: #2b8a3e; border: 1px solid #b2f2bb; padding: 5px 8px; border-radius: 6px;
+      font-size: 11px; font-weight: 700; margin-bottom: 12px; text-align: center; line-height: 1.3;
+    }
+
+    .metric-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; position: relative; z-index: 1; }
+    .metric-row {
+      display: flex; justify-content: space-between; align-items: center; gap: 8px;
+      padding: 9px 12px; border-radius: 10px; background: #fdfaf3; border-left: 4px solid var(--primary);
+    }
+    .metric-row.highlight { background: #fff3bf; border-left-color: #f59f00; border: 1.5px solid #ffe066; }
+    .metric-row.premium-row { background: #ffe8cc; border-left-color: #d9480f; }
+    .metric-label { font-size: 13px; font-weight: 700; color: #495057; display: flex; align-items: center; gap: 6px; }
+    .metric-val { font-size: 15px; font-weight: 800; color: #212529; text-align: right; }
+    .metric-val.green-val { color: #2b8a3e; font-size: 16px; }
+    .metric-val.orange-val { color: #d9480f; font-size: 17px; }
+
+    .highlights-box { background: #f8f9fa; border: 1px dashed #ced4da; padding: 10px; border-radius: 10px; font-size: 12px; color: #495057; margin-bottom: 12px; }
+    .highlights-box ul { list-style: none; }
+    .highlights-box li { margin-bottom: 4px; display: flex; align-items: flex-start; gap: 6px; font-weight: 600; line-height: 1.35; }
+    .highlights-box li:last-child { margin-bottom: 0; }
+    .highlights-box li i { color: var(--green); margin-top: 3px; }
+
+    .disclaimer-box {
+      background: #fff5f5; border: 1px solid #ffc9c9; border-radius: 8px; padding: 7px 9px;
+      font-size: 10.5px; line-height: 1.4; color: #6b2c2c; margin-bottom: 12px; font-weight: 600;
+    }
+
+    .card-footer-branding {
+      border-top: 1.5px solid #f1f3f5; padding-top: 10px; display: flex;
+      justify-content: space-between; align-items: center; gap: 8px; font-size: 11.5px; color: #495057;
+    }
+    .brand-name { font-weight: 800; color: var(--primary); font-size: 13px; }
+
+    /* ACTION BUTTONS */
+    .actions-box { display: flex; flex-direction: column; gap: 10px; width: 100%; margin-bottom: 24px; }
+    .btn {
+      width: 100%; padding: 13px 16px; border-radius: 12px; font-size: 15px; font-weight: 700; border: none;
+      cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; text-align: center;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-wa { background: linear-gradient(135deg, #25D366, #128C7E); color: white; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35); }
+    .btn-subtext { font-size: 11.5px; font-weight: 500; opacity: 0.95; margin-top: 2px; }
+    .btn-photo { background: linear-gradient(135deg, #f59f00, #d9480f); color: white; box-shadow: 0 4px 12px rgba(245, 159, 0, 0.35); }
+    .btn-share { background: white; color: #343a40; border: 1.5px solid #ced4da; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+
+    footer { text-align: center; font-size: 12px; color: #868e96; margin-top: auto; padding: 10px 0; }
+    .footer-disclaimer { font-size: 11px; line-height: 1.45; color: #6c757d; margin-bottom: 8px; }
+
+    #loading-toast {
+      position: fixed; bottom: 20px; background: rgba(0,0,0,0.85); color: white; padding: 10px 20px;
+      border-radius: 25px; font-size: 13px; font-weight: 600; display: none; z-index: 100;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- 1. Language Bar -->
+  <div class="top-bar">
+    <button class="lang-btn active" data-lang="mr" onclick="setLang('mr')">मराठी</button>
+    <button class="lang-btn" data-lang="hi" onclick="setLang('hi')">हिंदी</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">English</button>
+  </div>
+
+  <!-- 2. Header / Hero -->
+  <div class="hero">
+    <div class="hero-badge" id="txt-badge">🎂 एलआयसी जीवन उत्सव (८८३)</div>
+    <h1 id="txt-title">हॅपी बर्थडे लाईफ टाईम</h1>
+    <p id="txt-subtitle"></p>
+  </div>
+
+  <!-- 3. Age & Name Selector Box -->
+  <div class="selector-box">
+    <input type="text" id="child-name-input" class="child-name-input" maxlength="30" placeholder="" oninput="updateCardName()">
+    <div class="selector-title" id="txt-select-age"></div>
+    <div class="pills-container" id="pills-container"></div>
+  </div>
+
+  <!-- 4. Result Card to Capture -->
+  <div id="capture-card">
+    <div class="card-top-decor"></div>
+
+    <div class="bday-wishes-banner">
+      <h2 id="card-wishes-heading"></h2>
+      <p id="card-wishes-child"></p>
+    </div>
+
+    <div class="badge-sovereign">
+      <i class="fa-solid fa-shield-halved"></i>
+      <span id="txt-sovereign"></span>
+    </div>
+
+    <div class="metric-grid">
+      <div class="metric-row premium-row">
+        <span class="metric-label"><i class="fa-solid fa-coins"></i> <span id="lbl-prem"></span></span>
+        <span class="metric-val orange-val" id="val-prem"></span>
+      </div>
+      <div class="metric-row highlight">
+        <span class="metric-label"><i class="fa-solid fa-gift"></i> <span id="lbl-yearly"></span></span>
+        <span class="metric-val green-val" id="val-yearly"></span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-label"><i class="fa-solid fa-umbrella"></i> <span id="lbl-cover"></span></span>
+        <span class="metric-val" id="val-cover"></span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-label"><i class="fa-solid fa-sack-dollar"></i> <span id="lbl-mat"></span></span>
+        <span class="metric-val" id="val-mat"></span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-label"><i class="fa-solid fa-award"></i> <span id="lbl-total"></span></span>
+        <span class="metric-val green-val" id="val-total"></span>
+      </div>
+    </div>
+
+    <div class="highlights-box">
+      <ul>
+        <li><i class="fa-solid fa-check-circle"></i> <span id="feat-1"></span></li>
+        <li><i class="fa-solid fa-check-circle"></i> <span id="feat-2"></span></li>
+        <li><i class="fa-solid fa-check-circle"></i> <span id="feat-3"></span></li>
+      </ul>
+    </div>
+
+    <div class="disclaimer-box" id="card-disclaimer"></div>
+
+    <div class="card-footer-branding">
+      <div>
+        <div class="brand-name">Navin Parakh (Insurance Expert)</div>
+        <div id="txt-brand-exp"></div>
+      </div>
+      <div style="text-align: right; font-weight: 700; color: #212529; white-space: nowrap;">
+        <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> 9158858885
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Action Buttons -->
+  <div class="actions-box">
+    <a href="#" class="btn btn-wa" id="btn-whatsapp" target="_blank" rel="noopener">
+      <span><i class="fa-brands fa-whatsapp"></i> <span id="txt-btn-wa"></span></span>
+      <span class="btn-subtext" id="txt-btn-wa-sub"></span>
+    </a>
+
+    <button class="btn btn-photo" onclick="captureAndShareCard()">
+      <span><i class="fa-solid fa-camera"></i> <span id="txt-btn-photo"></span></span>
+      <span class="btn-subtext" id="txt-btn-photo-sub"></span>
+    </button>
+
+    <button class="btn btn-share" onclick="shareAppLink()">
+      <span><i class="fa-solid fa-share-nodes"></i> <span id="txt-btn-share"></span></span>
+    </button>
+  </div>
+
+  <footer>
+    <div class="footer-disclaimer" id="footer-disclaimer"></div>
+    &copy; 2026 Claim Tak | <span id="txt-footer-adv"></span> (9158858885)
+  </footer>
+</div>
+
+<div id="loading-toast"></div>
+
+<script>
+  // Complete Dataset (Sum Assured ₹10,00,000) - single premium by entry age 0-10
+  const planData = {
+    0: {
+      premium: { mr: "₹५,२९,०००", hi: "₹५,२९,०००", en: "₹5,29,000" },
+      cover: { mr: "₹५,२९,००० ते ₹१६,८०,०००", hi: "₹५,२९,००० से ₹१६,८०,०००", en: "₹5,29,000 to ₹16,80,000" },
+      payout: { mr: "₹१,००,०००", hi: "₹१,००,०००", en: "₹1,00,000" },
+      maturity: { mr: "₹१६,८०,०००", hi: "₹१६,८०,०००", en: "₹16,80,000" },
+      total: { mr: "₹९८.८० लाख", hi: "₹९८.८० लाख", en: "₹98.80 Lakh" }
+    },
+    1: {
+      premium: { mr: "₹५,५९,५५०", hi: "₹५,५९,५५०", en: "₹5,59,550" },
+      cover: { mr: "₹५,५९,५५० ते ₹१६,४०,०००", hi: "₹५,५९,५५० से ₹१६,४०,०००", en: "₹5,59,550 to ₹16,40,000" },
+      payout: { mr: "₹१,००,०००", hi: "₹१,००,०००", en: "₹1,00,000" },
+      maturity: { mr: "₹१६,४०,०००", hi: "₹१६,४०,०००", en: "₹16,40,000" },
+      total: { mr: "₹९८.४० लाख", hi: "₹९८.४० लाख", en: "₹98.40 Lakh" }
+    },
+    2: {
+      premium: { mr: "₹५,९४,०००", hi: "₹५,९४,०००", en: "₹5,94,000" },
+      cover: { mr: "₹५,९४,००० ते ₹१६,००,०००", hi: "₹५,९४,००० से ₹१६,००,०००", en: "₹5,94,000 to ₹16,00,000" },
+      payout: { mr: "₹१,००,०००", hi: "₹१,००,०००", en: "₹1,00,000" },
+      maturity: { mr: "₹१६,००,०००", hi: "₹१६,००,०००", en: "₹16,00,000" },
+      total: { mr: "₹९८.०० लाख", hi: "₹९८.०० लाख", en: "₹98.00 Lakh" }
+    },
+    3: {
+      premium: { mr: "₹६,३०,९००", hi: "₹६,३०,९००", en: "₹6,30,900" },
+      cover: { mr: "₹६,३०,९०० ते ₹१५,६०,०००", hi: "₹६,३०,९०० से ₹१५,६०,०००", en: "₹6,30,900 to ₹15,60,000" },
+      payout: { mr: "₹१,००,०००", hi: "₹१,००,०००", en: "₹1,00,000" },
+      maturity: { mr: "₹१५,६०,०००", hi: "₹१५,६०,०००", en: "₹15,60,000" },
+      total: { mr: "₹९७.६० लाख", hi: "₹९७.६० लाख", en: "₹97.60 Lakh" }
+    },
+    4: {
+      premium: { mr: "₹६,७०,४५०", hi: "₹६,७०,४५०", en: "₹6,70,450" },
+      cover: { mr: "₹६,७०,४५० ते ₹१५,२०,०००", hi: "₹६,७०,४५० से ₹१५,२०,०००", en: "₹6,70,450 to ₹15,20,000" },
+      payout: { mr: "₹१,००,०००", hi: "₹१,००,०००", en: "₹1,00,000" },
+      maturity: { mr: "₹१५,२०,०००", hi: "₹१५,२०,०००", en: "₹15,20,000" },
+      total: { mr: "₹९७.२० लाख", hi: "₹९७.२० लाख", en: "₹97.20 Lakh" }
+    },
+    5: {
+      premium: { mr: "₹७,१२,७५०", hi: "₹७,१२,७५०", en: "₹7,12,750" },
+      cover: { mr: "₹७,१२,७५० ते ₹१४,८०,०००", hi: "₹७,१२,७५० से ₹१४,८०,०००", en: "₹7,12,750 to ₹14,80,000" },
+      payout: { mr: "₹१,००,०००", hi: "₹१,००,०००", en: "₹1,00,000" },
+      maturity: { mr: "₹१४,८०,०००", hi: "₹१४,८०,०००", en: "₹14,80,000" },
+      total: { mr: "₹९६.८० लाख", hi: "₹९६.८० लाख", en: "₹96.80 Lakh" }
+    },
+    6: {
+      premium: { mr: "₹७,५७,९००", hi: "₹७,५७,९००", en: "₹7,57,900" },
+      cover: { mr: "₹७,५७,९०० ते ₹१४,४०,०००", hi: "₹७,५७,९०० से ₹१४,४०,०००", en: "₹7,57,900 to ₹14,40,000" },
+      payout: { mr: "₹१,००,०००", hi: "₹१,००,०००", en: "₹1,00,000" },
+      maturity: { mr: "₹१४,४०,०००", hi: "₹१४,४०,०००", en: "₹14,40,000" },
+      total: { mr: "₹९६.४० लाख", hi: "₹९६.४० लाख", en: "₹96.40 Lakh" }
+    },
+    7: {
+      premium: { mr: "₹८,०६,६५०", hi: "₹८,०६,६५०", en: "₹8,06,650" },
+      cover: { mr: "₹८,०६,६५० ते ₹१४,२२,०६३", hi: "₹८,०६,६५० से ₹१४,२२,०६३", en: "₹8,06,650 to ₹14,22,063" },
+      payout: { mr: "₹१,००,०००", hi: "₹१,००,०००", en: "₹1,00,000" },
+      maturity: { mr: "₹१४,०८,३१२", hi: "₹१४,०८,३१२", en: "₹14,08,312" },
+      total: { mr: "₹९६.०८ लाख", hi: "₹९६.०८ लाख", en: "₹96.08 Lakh" }
+    },
+    8: {
+      premium: { mr: "₹८,६०,०५०", hi: "₹८,६०,०५०", en: "₹8,60,050" },
+      cover: { mr: "₹११,२८,८१३ ते ₹१४,४८,८१३", hi: "₹११,२८,८१३ से ₹१४,४८,८१३", en: "₹11,28,813 to ₹14,48,813" },
+      payout: { mr: "₹१,००,०००", hi: "₹१,००,०००", en: "₹1,00,000" },
+      maturity: { mr: "₹१४,३५,०६२", hi: "₹१४,३५,०६२", en: "₹14,35,062" },
+      total: { mr: "₹९६.३५ लाख", hi: "₹९६.३५ लाख", en: "₹96.35 Lakh" }
+    },
+    9: {
+      premium: { mr: "₹९,१७,३००", hi: "₹९,१७,३००", en: "₹9,17,300" },
+      cover: { mr: "₹१२,००,३७५ ते ₹१४,८०,३७५", hi: "₹१२,००,३७५ से ₹१४,८०,३७५", en: "₹12,00,375 to ₹14,80,375" },
+      payout: { mr: "₹१,००,०००", hi: "₹१,००,०००", en: "₹1,00,000" },
+      maturity: { mr: "₹१४,६६,६२५", hi: "₹१४,६६,६२५", en: "₹14,66,625" },
+      total: { mr: "₹९६.६६ लाख", hi: "₹९६.६६ लाख", en: "₹96.66 Lakh" }
+    },
+    10: {
+      premium: { mr: "₹९,७८,७००", hi: "₹९,७८,७००", en: "₹9,78,700" },
+      cover: { mr: "₹१२,७७,१२५ ते ₹१५,१७,१२५", hi: "₹१२,७७,१२५ से ₹१५,१७,१२५", en: "₹12,77,125 to ₹15,17,125" },
+      payout: { mr: "₹१,००,०००", hi: "₹१,००,०००", en: "₹1,00,000" },
+      maturity: { mr: "₹१५,०३,३७५", hi: "₹१५,०३,३७५", en: "₹15,03,375" },
+      total: { mr: "₹९७.०३ लाख", hi: "₹९७.०३ लाख", en: "₹97.03 Lakh" }
+    }
+  };
+
+  // UI Strings
+  const translations = {
+    mr: {
+      htmlLang: "mr",
+      pageTitle: "हॅपी बर्थडे लाईफ टाईम | LIC जीवन उत्सव (८८३)",
+      badge: "🎂 एलआयसी जीवन उत्सव (८८३)",
+      title: "हॅपी बर्थडे लाईफ टाईम",
+      subtitle: "मुलाच्या १८ ते १०० वयापर्यंत दर वाढदिवसाला ₹१ लाख वार्षिक लाभ (पॉलिसी अटींनुसार)",
+      selectAge: "मुलाचे सध्याचे वय सिलेक्ट करा:",
+      childPlaceholder: "मुलाचे/मुलीचे नाव येथे लिहा (ऐच्छिक)",
+      ageSuffix: "वर्ष",
+      wishesHeading: "🎉 वाढदिवसाच्या हार्दिक शुभेच्छा! 🎉",
+      wishesChildDefault: "प्रिय बाळाला आयुष्यभराची सर्वात मोठी भेट!",
+      wishesFor: "प्रिय ",
+      wishesSuffix: " - तुला आयुष्यभराची सर्वात मोठी भेट!",
+      sovereign: "एलआयसी कायदा, १९५६ च्या कलम ३७ नुसार सार्वभौम हमीचे संरक्षण (पॉलिसीच्या अटींनुसार)",
+      lblPrem: "एकरकमी गुंतवणूक (Single Premium):",
+      lblYearly: "दर वाढदिवसाला वार्षिक लाभ (वय १८-१००):",
+      lblCover: "आयुष्यभर लाईफ कव्हर (Life Cover):",
+      lblMat: "१०० व्या वर्षी मॅच्युरिटी रक्कम:",
+      lblTotal: "एकूण अंदाजे लाभ (उदाहरणादाखल):",
+      feat1: "विमा रकमेच्या १०% (₹१ लाख) वार्षिक लाभ, वय १८ ते १०० पर्यंत (पॉलिसी अटींनुसार)",
+      feat2: "फक्त एकदाच प्रीमियम भरा, १०० वयापर्यंत आयुष्यभराचे संरक्षण",
+      feat3: "कलम १०(१०D): आयकर कायद्यातील प्रचलित अटींच्या अधीन कर लाभ",
+      disclaimer: "लाभ व देय रक्कम LIC जीवन उत्सव (प्लॅन ८८३) च्या पॉलिसी अटी व शर्तींच्या अधीन आहेत. कृपया सेल्स ब्रोशर काळजीपूर्वक वाचा.",
+      brandExp: "१९ वर्षांचा अनुभव | क्लेम तक (Claim Tak)",
+      adviser: "सल्लागार: नविन पारख",
+      btnWa: "मला डायरेक्ट WhatsApp वर संपर्क करा",
+      btnWaSub: "(प्रीमियम भरण्याचे इतरही पर्याय उपलब्ध आहेत - उदा. ५, ७, ९, १२ वर्षे)",
+      btnPhoto: "कार्डचा फोटो डाऊनलोड / शेअर करा",
+      btnPhotoSub: "(वाढदिवसाच्या शुभेच्छांसह फोटो पाठवा)",
+      btnShare: "ज्यांची मुले १-१० वर्षांची आहेत त्यांना पाठवा",
+      loading: "कार्डचा फोटो तयार होत आहे... कृपया थांबा!",
+      shareErr: "फोटो तयार करता आला नाही. कृपया पुन्हा प्रयत्न करा.",
+      copied: "लिंक कॉपी झाली!",
+      waMsg: (age, name, prem) => `नमस्कार नविन सर, मला LIC जीवन उत्सव (प्लॅन ८८३) बद्दल माहिती हवी आहे.${name ? "\nमुलाचे नाव: " + name : ""}\nमुलाचे वय: ${age} वर्ष\nएकरकमी प्रीमियम: ${prem}\nकृपया इतर प्रीमियम भरण्याच्या पर्यायांबद्दल (५, ७, ९, १२ वर्षे) देखील माहिती द्या.`,
+      shareText: "तुमच्या मुलासाठी LIC जीवन उत्सव (८८३) - 'हॅपी बर्थडे लाईफ टाईम'! मुलाच्या वयानुसार प्रीमियम व लाभ येथे पहा:",
+      cardShareText: "वाढदिवसाच्या हार्दिक शुभेच्छा! LIC जीवन उत्सव (८८३) - नविन पारख (9158858885)"
+    },
+    hi: {
+      htmlLang: "hi",
+      pageTitle: "हैप्पी बर्थडे लाइफ टाइम | LIC जीवन उत्सव (८८३)",
+      badge: "🎂 एलआईसी जीवन उत्सव (८८३)",
+      title: "हैप्पी बर्थडे लाइफ टाइम",
+      subtitle: "बच्चे की उम्र १८ से १०० वर्ष तक हर जन्मदिन पर ₹१ लाख वार्षिक लाभ (पॉलिसी शर्तों के अनुसार)",
+      selectAge: "बच्चे की वर्तमान उम्र चुनें:",
+      childPlaceholder: "बच्चे का नाम यहाँ लिखें (वैकल्पिक)",
+      ageSuffix: "वर्ष",
+      wishesHeading: "🎉 जन्मदिन की हार्दिक शुभकामनाएँ! 🎉",
+      wishesChildDefault: "प्यारे बच्चे के लिए जीवनभर का सबसे बड़ा तोहफ़ा!",
+      wishesFor: "प्रिय ",
+      wishesSuffix: " - तुम्हारे लिए जीवनभर का सबसे बड़ा तोहफ़ा!",
+      sovereign: "एलआईसी अधिनियम, १९५६ की धारा ३७ के अनुसार सॉवरेन गारंटी का संरक्षण (पॉलिसी की शर्तों के अधीन)",
+      lblPrem: "एकमुश्त निवेश (Single Premium):",
+      lblYearly: "हर जन्मदिन पर वार्षिक लाभ (उम्र १८-१००):",
+      lblCover: "जीवनभर लाइफ कवर (Life Cover):",
+      lblMat: "१०० वर्ष की उम्र पर मैच्योरिटी राशि:",
+      lblTotal: "कुल अनुमानित लाभ (उदाहरण हेतु):",
+      feat1: "बीमा राशि का १०% (₹१ लाख) वार्षिक लाभ, उम्र १८ से १०० तक (पॉलिसी शर्तों के अनुसार)",
+      feat2: "केवल एक बार प्रीमियम भरें, १०० वर्ष की उम्र तक जीवनभर सुरक्षा",
+      feat3: "धारा १०(१०D): आयकर अधिनियम की प्रचलित शर्तों के अधीन कर लाभ",
+      disclaimer: "लाभ एवं भुगतान LIC जीवन उत्सव (प्लान ८८३) की पॉलिसी नियमों व शर्तों के अधीन हैं। कृपया सेल्स ब्रोशर ध्यानपूर्वक पढ़ें।",
+      brandExp: "१९ वर्षों का अनुभव | क्लेम तक (Claim Tak)",
+      adviser: "सलाहकार: नविन पारख",
+      btnWa: "मुझसे सीधे WhatsApp पर संपर्क करें",
+      btnWaSub: "(प्रीमियम भुगतान के अन्य विकल्प भी उपलब्ध हैं - जैसे ५, ७, ९, १२ वर्ष)",
+      btnPhoto: "कार्ड की फोटो डाउनलोड / शेयर करें",
+      btnPhotoSub: "(जन्मदिन की शुभकामनाओं के साथ फोटो भेजें)",
+      btnShare: "जिनके बच्चे १-१० वर्ष के हैं उन्हें भेजें",
+      loading: "कार्ड की फोटो तैयार हो रही है... कृपया प्रतीक्षा करें!",
+      shareErr: "फोटो नहीं बन सकी। कृपया फिर से प्रयास करें।",
+      copied: "लिंक कॉपी हो गया!",
+      waMsg: (age, name, prem) => `नमस्कार नविन सर, मुझे LIC जीवन उत्सव (प्लान ८८३) के बारे में जानकारी चाहिए।${name ? "\nबच्चे का नाम: " + name : ""}\nबच्चे की उम्र: ${age} वर्ष\nएकमुश्त प्रीमियम: ${prem}\nकृपया प्रीमियम भुगतान के अन्य विकल्पों (५, ७, ९, १२ वर्ष) की जानकारी भी दें।`,
+      shareText: "आपके बच्चे के लिए LIC जीवन उत्सव (८८३) - 'हैप्पी बर्थडे लाइफ टाइम'! बच्चे की उम्र के अनुसार प्रीमियम और लाभ यहाँ देखें:",
+      cardShareText: "जन्मदिन की हार्दिक शुभकामनाएँ! LIC जीवन उत्सव (८८३) - नविन पारख (9158858885)"
+    },
+    en: {
+      htmlLang: "en",
+      pageTitle: "Happy Birthday Life Time | LIC Jeevan Utsav (883)",
+      badge: "🎂 LIC Jeevan Utsav (883)",
+      title: "Happy Birthday Life Time",
+      subtitle: "₹1 Lakh yearly benefit every birthday from age 18 to 100 (subject to policy terms)",
+      selectAge: "Select child's current age:",
+      childPlaceholder: "Enter child's name here (optional)",
+      ageSuffix: "yrs",
+      wishesHeading: "🎉 Happy Birthday! 🎉",
+      wishesChildDefault: "The biggest lifelong gift for your little one!",
+      wishesFor: "Dear ",
+      wishesSuffix: " - the biggest lifelong gift for you!",
+      sovereign: "Backed by Sovereign Guarantee as per Section 37 of LIC Act, 1956 (Subject to policy terms)",
+      lblPrem: "One-time Investment (Single Premium):",
+      lblYearly: "Yearly Birthday Benefit (Age 18-100):",
+      lblCover: "Lifelong Life Cover:",
+      lblMat: "Maturity Amount at Age 100:",
+      lblTotal: "Total Estimated Benefit (illustrative):",
+      feat1: "10% of Sum Assured (₹1 Lakh) yearly benefit from age 18 to 100 (subject to policy terms)",
+      feat2: "Pay the premium just once, lifelong protection up to age 100",
+      feat3: "Section 10(10D): Tax benefits are subject to prevailing conditions under Income Tax Act",
+      disclaimer: "Benefits and payouts are subject to policy terms and conditions of LIC Jeevan Utsav (Plan 883). Please read the sales brochure carefully.",
+      brandExp: "19 Years Experience | Claim Tak",
+      adviser: "Adviser: Navin Parakh",
+      btnWa: "Contact me directly on WhatsApp",
+      btnWaSub: "(Other premium paying term options are also available - e.g. 5, 7, 9, 12 years)",
+      btnPhoto: "Download / Share Card Photo",
+      btnPhotoSub: "(Send the photo with birthday wishes)",
+      btnShare: "Send to parents of children aged 1-10",
+      loading: "Preparing card photo... please wait!",
+      shareErr: "Could not create the photo. Please try again.",
+      copied: "Link copied!",
+      waMsg: (age, name, prem) => `Hello Navin Sir, I would like information about LIC Jeevan Utsav (Plan 883).${name ? "\nChild's name: " + name : ""}\nChild's age: ${age} years\nSingle premium: ${prem}\nPlease also share details of other premium paying term options (5, 7, 9, 12 years).`,
+      shareText: "LIC Jeevan Utsav (883) 'Happy Birthday Life Time' for your child! Check premium and benefits by child's age here:",
+      cardShareText: "Happy Birthday! LIC Jeevan Utsav (883) - Navin Parakh (9158858885)"
+    }
+  };
+
+  const WA_NUMBER = "919158858885";
+  let currentLang = "mr";
+  let currentAge = 0;
+
+  const $ = (id) => document.getElementById(id);
+
+  function toDevanagari(n) {
+    return String(n).replace(/\d/g, d => "०१२३४५६७८९"[d]);
+  }
+  function ageText(n) {
+    const t = translations[currentLang];
+    const num = currentLang === "en" ? n : toDevanagari(n);
+    return num + " " + t.ageSuffix;
+  }
+  function getChildName() {
+    return $("child-name-input").value.trim();
+  }
+
+  // Age pills
+  function renderAgePills() {
+    const container = $("pills-container");
+    container.innerHTML = "";
+    for (let age = 0; age <= 10; age++) {
+      const pill = document.createElement("button");
+      pill.type = "button";
+      pill.className = "age-pill" + (age === currentAge ? " active" : "");
+      pill.textContent = ageText(age);
+      pill.onclick = () => selectAge(age);
+      container.appendChild(pill);
+    }
+  }
+
+  function selectAge(age) {
+    currentAge = age;
+    renderAgePills();
+    updateCardData();
+  }
+
+  function updateCardName() {
+    const t = translations[currentLang];
+    const name = getChildName();
+    $("card-wishes-child").textContent = name
+      ? t.wishesFor + name + t.wishesSuffix
+      : t.wishesChildDefault;
+    updateWhatsAppLink();
+  }
+
+  // Static text per language
+  function updateUI() {
+    const t = translations[currentLang];
+    document.documentElement.lang = t.htmlLang;
+    document.title = t.pageTitle;
+
+    document.querySelectorAll(".lang-btn").forEach(b =>
+      b.classList.toggle("active", b.dataset.lang === currentLang));
+
+    $("txt-badge").textContent = t.badge;
+    $("txt-title").textContent = t.title;
+    $("txt-subtitle").textContent = t.subtitle;
+    $("txt-select-age").textContent = t.selectAge;
+    $("child-name-input").placeholder = t.childPlaceholder;
+    $("card-wishes-heading").textContent = t.wishesHeading;
+    $("txt-sovereign").textContent = t.sovereign;
+    $("lbl-prem").textContent = t.lblPrem;
+    $("lbl-yearly").textContent = t.lblYearly;
+    $("lbl-cover").textContent = t.lblCover;
+    $("lbl-mat").textContent = t.lblMat;
+    $("lbl-total").textContent = t.lblTotal;
+    $("feat-1").textContent = t.feat1;
+    $("feat-2").textContent = t.feat2;
+    $("feat-3").textContent = t.feat3;
+    $("card-disclaimer").textContent = t.disclaimer;
+    $("footer-disclaimer").textContent = t.disclaimer;
+    $("txt-brand-exp").textContent = t.brandExp;
+    $("txt-footer-adv").textContent = t.adviser;
+    $("txt-btn-wa").textContent = t.btnWa;
+    $("txt-btn-wa-sub").textContent = t.btnWaSub;
+    $("txt-btn-photo").textContent = t.btnPhoto;
+    $("txt-btn-photo-sub").textContent = t.btnPhotoSub;
+    $("txt-btn-share").textContent = t.btnShare;
+    $("loading-toast").textContent = t.loading;
+
+    renderAgePills();
+    updateCardData();
+  }
+
+  // Numbers per selected age
+  function updateCardData() {
+    const d = planData[currentAge];
+    const l = currentLang;
+    $("val-prem").textContent = d.premium[l];
+    $("val-yearly").textContent = d.payout[l];
+    $("val-cover").textContent = d.cover[l];
+    $("val-mat").textContent = d.maturity[l];
+    $("val-total").textContent = d.total[l];
+    updateCardName();
+  }
+
+  function updateWhatsAppLink() {
+    const t = translations[currentLang];
+    const msg = t.waMsg(
+      currentLang === "en" ? currentAge : toDevanagari(currentAge),
+      getChildName(),
+      planData[currentAge].premium[currentLang]
+    );
+    $("btn-whatsapp").href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg);
+  }
+
+  function setLang(lang) {
+    if (!translations[lang]) return;
+    currentLang = lang;
+    try { localStorage.setItem("lic883_lang", lang); } catch (e) {}
+    updateUI();
+  }
+
+  // Card photo: html2canvas -> Web Share API (files) -> download fallback
+  async function captureAndShareCard() {
+    const t = translations[currentLang];
+    const toast = $("loading-toast");
+    toast.style.display = "block";
+    try {
+      if (typeof html2canvas === "undefined") throw new Error("html2canvas not loaded");
+      if (document.fonts && document.fonts.ready) await document.fonts.ready;
+
+      const canvas = await html2canvas($("capture-card"), {
+        scale: 2,
+        backgroundColor: "#ffffff",
+        useCORS: true,
+        logging: false
+      });
+      const blob = await new Promise(res => canvas.toBlob(res, "image/png"));
+      if (!blob) throw new Error("Blob creation failed");
+
+      const name = getChildName();
+      const safeName = (name || "child").replace(/[^\w\u0900-\u097F-]+/g, "_");
+      const fileName = "LIC-Jeevan-Utsav-883_" + safeName + "_age" + currentAge + ".png";
+      const file = new File([blob], fileName, { type: "image/png" });
+
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        try {
+          await navigator.share({ files: [file], title: t.title, text: t.cardShareText });
+          return;
+        } catch (err) {
+          if (err && err.name === "AbortError") return; // user cancelled
+          // otherwise fall through to download
+        }
+      }
+
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+    } catch (err) {
+      console.error(err);
+      alert(t.shareErr);
+    } finally {
+      toast.style.display = "none";
+    }
+  }
+
+  // Share app link
+  async function shareAppLink() {
+    const t = translations[currentLang];
+    const url = window.location.href.split("#")[0];
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: t.title, text: t.shareText, url: url });
+        return;
+      } catch (err) {
+        if (err && err.name === "AbortError") return;
+      }
+    }
+    // Fallback: WhatsApp share
+    window.open("https://wa.me/?text=" + encodeURIComponent(t.shareText + "\n" + url), "_blank", "noopener");
+  }
+
+  // Init
+  (function init() {
+    try {
+      const saved = localStorage.getItem("lic883_lang");
+      if (saved && translations[saved]) currentLang = saved;
+    } catch (e) {}
+    updateUI();
+  })();
+</script>
+</body>
+</html>
